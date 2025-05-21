@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>chemometricspy.doe package &mdash; ChemometricsPy May, 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=c7424be9"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ChemometricsPy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">chemometricspy.doe package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-chemometricspy.doe.bbd">chemometricspy.doe.bbd module</a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.bbd.BoxBehnkenDesign"><code class="docutils literal notranslate"><span class="pre">BoxBehnkenDesign</span></code></a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.bbd.BoxBehnkenDesign.generate_codified_matrix"><code class="docutils literal notranslate"><span class="pre">BoxBehnkenDesign.generate_codified_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.bbd.BoxBehnkenDesign.generate_doe"><code class="docutils literal notranslate"><span class="pre">BoxBehnkenDesign.generate_doe()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.bbd.BoxBehnkenDesign.randomize"><code class="docutils literal notranslate"><span class="pre">BoxBehnkenDesign.randomize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-chemometricspy.doe.ccd">chemometricspy.doe.ccd module</a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.ccd.CentralCompositeDesign"><code class="docutils literal notranslate"><span class="pre">CentralCompositeDesign</span></code></a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.ccd.CentralCompositeDesign.generate_codified_matrix"><code class="docutils literal notranslate"><span class="pre">CentralCompositeDesign.generate_codified_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.ccd.CentralCompositeDesign.generate_codified_matrix_fc"><code class="docutils literal notranslate"><span class="pre">CentralCompositeDesign.generate_codified_matrix_fc()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.ccd.CentralCompositeDesign.generate_doe"><code class="docutils literal notranslate"><span class="pre">CentralCompositeDesign.generate_doe()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.ccd.CentralCompositeDesign.randomize"><code class="docutils literal notranslate"><span class="pre">CentralCompositeDesign.randomize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chemometricspy-doe-efeitos-module">chemometricspy.doe.efeitos module</a></li>
+<li><a class="reference internal" href="#chemometricspy-doe-exemplo-module">chemometricspy.doe.exemplo module</a></li>
+<li><a class="reference internal" href="#module-chemometricspy.doe.factorial">chemometricspy.doe.factorial module</a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial"><code class="docutils literal notranslate"><span class="pre">Factorial</span></code></a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.calculate_effects"><code class="docutils literal notranslate"><span class="pre">Factorial.calculate_effects()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.generate_codified_matrix"><code class="docutils literal notranslate"><span class="pre">Factorial.generate_codified_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.generate_doe"><code class="docutils literal notranslate"><span class="pre">Factorial.generate_doe()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.plot_effect_diagrams"><code class="docutils literal notranslate"><span class="pre">Factorial.plot_effect_diagrams()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.plot_effects"><code class="docutils literal notranslate"><span class="pre">Factorial.plot_effects()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.plot_effects_percentage"><code class="docutils literal notranslate"><span class="pre">Factorial.plot_effects_percentage()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.plot_effects_probability"><code class="docutils literal notranslate"><span class="pre">Factorial.plot_effects_probability()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.plot_pareto_effects"><code class="docutils literal notranslate"><span class="pre">Factorial.plot_pareto_effects()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.factorial.Factorial.randomize"><code class="docutils literal notranslate"><span class="pre">Factorial.randomize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-chemometricspy.doe.fractional_factorial">chemometricspy.doe.fractional_factorial module</a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.fractional_factorial.FractionalFactorial"><code class="docutils literal notranslate"><span class="pre">FractionalFactorial</span></code></a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.fractional_factorial.FractionalFactorial.describe_plan"><code class="docutils literal notranslate"><span class="pre">FractionalFactorial.describe_plan()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.fractional_factorial.FractionalFactorial.generate_matrix"><code class="docutils literal notranslate"><span class="pre">FractionalFactorial.generate_matrix()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-chemometricspy.doe.regression">chemometricspy.doe.regression module</a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.regression.RegressionAnalysis"><code class="docutils literal notranslate"><span class="pre">RegressionAnalysis</span></code></a><ul>
+<li><a class="reference internal" href="#chemometricspy.doe.regression.RegressionAnalysis.fit"><code class="docutils literal notranslate"><span class="pre">RegressionAnalysis.fit()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.regression.RegressionAnalysis.plot_predicted_vs_actual"><code class="docutils literal notranslate"><span class="pre">RegressionAnalysis.plot_predicted_vs_actual()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.regression.RegressionAnalysis.plot_residual_distribution"><code class="docutils literal notranslate"><span class="pre">RegressionAnalysis.plot_residual_distribution()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.regression.RegressionAnalysis.plot_residuals_vs_predicted"><code class="docutils literal notranslate"><span class="pre">RegressionAnalysis.plot_residuals_vs_predicted()</span></code></a></li>
+<li><a class="reference internal" href="#chemometricspy.doe.regression.RegressionAnalysis.regression_equation"><code class="docutils literal notranslate"><span class="pre">RegressionAnalysis.regression_equation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-chemometricspy.doe">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ChemometricsPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">chemometricspy.doe package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/chemometricspy.doe.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chemometricspy-doe-package">
+<h1>chemometricspy.doe package<a class="headerlink" href="#chemometricspy-doe-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-chemometricspy.doe.bbd">
+<span id="chemometricspy-doe-bbd-module"></span><h2>chemometricspy.doe.bbd module<a class="headerlink" href="#module-chemometricspy.doe.bbd" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="chemometricspy.doe.bbd.BoxBehnkenDesign">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chemometricspy.doe.bbd.</span></span><span class="sig-name descname"><span class="pre">BoxBehnkenDesign</span></span><a class="headerlink" href="#chemometricspy.doe.bbd.BoxBehnkenDesign" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Useful for avoiding extreme experimental conditions by combining midpoints of factor ranges.</p>
+<p>Parameters:
+- factors_names (list of str): List of factor names.
+- center_points (int): Number of center point replicates.</p>
+<p>Attributes:
+- codified_matrix (pd.DataFrame): Design matrix in coded values (-1, 0, +1).</p>
+<p>Methods:
+- generate_codified_matrix(): Generates the Box-Behnken design in coded levels.
+- generate_doe(): Converts the codified matrix to real-world levels using factor boundaries.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.bbd.BoxBehnkenDesign.generate_codified_matrix">
+<span class="sig-name descname"><span class="pre">generate_codified_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_of_factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.bbd.BoxBehnkenDesign.generate_codified_matrix" title="Link to this definition"></a></dt>
+<dd><p>Generates a Box-Behnken matrix in canonical execution order.</p>
+<p>Parameters:
+- number_of_factors: int ≥ 3
+- factor_names: list of str, optional
+- center_points: int</p>
+<p>Stores:
+- self.codified_matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.bbd.BoxBehnkenDesign.generate_doe">
+<span class="sig-name descname"><span class="pre">generate_doe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_levels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.bbd.BoxBehnkenDesign.generate_doe" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.bbd.BoxBehnkenDesign.randomize">
+<span class="sig-name descname"><span class="pre">randomize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.bbd.BoxBehnkenDesign.randomize" title="Link to this definition"></a></dt>
+<dd><p>Randomize the run order of the design matrix.</p>
+<p>Parameters:
+-matrix (dataframe): Real matrix with real levels</p>
+<p>Returns:
+- pd.DataFRame: Randomized design matrix</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-chemometricspy.doe.ccd">
+<span id="chemometricspy-doe-ccd-module"></span><h2>chemometricspy.doe.ccd module<a class="headerlink" href="#module-chemometricspy.doe.ccd" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="chemometricspy.doe.ccd.CentralCompositeDesign">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chemometricspy.doe.ccd.</span></span><span class="sig-name descname"><span class="pre">CentralCompositeDesign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CCD</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.ccd.CentralCompositeDesign" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Supports both rotatable and face-centered CCD configurations. Includes factorial, axial and center points.</p>
+<p>Parameters:
+- factors_names (list of str): Names of the experimental factors.
+- center_points (int): Number of center points to include.
+- alpha_type (str): Type of axial distance (‘rotatable’ or ‘face-centered’).</p>
+<p>Attributes:
+- codified_matrix (pd.DataFrame): Matrix including factorial, axial and center points in coded form.</p>
+<p>Methods:
+- _alpha_rotatable(): Computes rotatable alpha value for the number of factors.
+- generate_codified_matrix(): Generates a rotatable CCD matrix.
+- generate_codified_matrix_fc(): Generates a face-centered CCD matrix (α = 1).
+- generate_doe(): Converts the codified CCD matrix to real experimental levels.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.ccd.CentralCompositeDesign.generate_codified_matrix">
+<span class="sig-name descname"><span class="pre">generate_codified_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.ccd.CentralCompositeDesign.generate_codified_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.ccd.CentralCompositeDesign.generate_codified_matrix_fc">
+<span class="sig-name descname"><span class="pre">generate_codified_matrix_fc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.ccd.CentralCompositeDesign.generate_codified_matrix_fc" title="Link to this definition"></a></dt>
+<dd><p>Generates a face-centered central composite design (CCD) matrix.
+All design points have coded levels of -1, 0, or +1.</p>
+<p>Parameters:
+- n_factors (int): number of factors
+- factor_names (list[str]): list of factor names
+- center_points (int): number of replicates at the center</p>
+<p>Returns:
+- pd.DataFrame: design matrix with coded levels</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.ccd.CentralCompositeDesign.generate_doe">
+<span class="sig-name descname"><span class="pre">generate_doe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_levels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.ccd.CentralCompositeDesign.generate_doe" title="Link to this definition"></a></dt>
+<dd><p>Converts the codified matrix into real values using linear transformation:
+real = center + x * (high - low)/2</p>
+<p>Parameters:
+- factor_levels: list of tuples [(low1, high1), …, (lowk, highk)]
+- center_levels: list of center points [c1, c2, …, ck]</p>
+<p>Returns:
+- pd.DataFrame: real-valued design matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.ccd.CentralCompositeDesign.randomize">
+<span class="sig-name descname"><span class="pre">randomize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.ccd.CentralCompositeDesign.randomize" title="Link to this definition"></a></dt>
+<dd><p>Randomize the run order of the design matrix.</p>
+<p>Parameters:
+-matrix (dataframe): Real matrix with real levels</p>
+<p>Returns:
+- pd.DataFRame: Randomized design matrix</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="chemometricspy-doe-efeitos-module">
+<h2>chemometricspy.doe.efeitos module<a class="headerlink" href="#chemometricspy-doe-efeitos-module" title="Link to this heading"></a></h2>
+</section>
+<section id="chemometricspy-doe-exemplo-module">
+<h2>chemometricspy.doe.exemplo module<a class="headerlink" href="#chemometricspy-doe-exemplo-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-chemometricspy.doe.factorial">
+<span id="chemometricspy-doe-factorial-module"></span><h2>chemometricspy.doe.factorial module<a class="headerlink" href="#module-chemometricspy.doe.factorial" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chemometricspy.doe.factorial.</span></span><span class="sig-name descname"><span class="pre">Factorial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_of_factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class supports the construction of complete 2^k factorial designs and their conversion to real-world levels.</p>
+<p>Parameters:
+- number_of_factors (int): Number of factors in the experiment.
+- factors_names (list of str): Names of the factors.
+- center_points (int): Number of center points (default is 0).</p>
+<p>Attributes:
+- codified_matrix (pd.DataFrame): The matrix with coded levels (-1, +1, and 0).
+- real_matrix (pd.DataFrame): Design matrix converted to real levels.
+- effects (dict): Stores calculated effects from experimental data.</p>
+<p>Methods:
+- generate_codified_matrix(): Generates the factorial matrix with ±1 levels and optional center points.
+- generate_doe(): Converts the codified matrix to real experimental levels.
+- calculate_effects(): Computes the main and interaction effects from responses.
+- plot_effects(): Bar chart of effect magnitudes.
+- plot_effects_percentage(): Plots the contribution percentage of each effect.
+- plot_effects_probability(): QQ-style plot for determining significant effects.
+- plot_effect_diagrams(): Main and interaction plots for exploratory visualization.
+- plot_pareto_effects(): Horizontal Pareto chart of effects for significance evaluation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.calculate_effects">
+<span class="sig-name descname"><span class="pre">calculate_effects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">responses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.calculate_effects" title="Link to this definition"></a></dt>
+<dd><p>Calculates factorial effects manually without using DataFrame .prod().
+Uses only factorial points (±1), ignoring center points (0).</p>
+<p>Parameters:
+- responses: list of response values (same order as self.matrix)
+- display: whether to print the effects</p>
+<p>Stores:
+- self.effects: dict of effects { “A”: value, “A*B”: value, … }</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.generate_codified_matrix">
+<span class="sig-name descname"><span class="pre">generate_codified_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.generate_codified_matrix" title="Link to this definition"></a></dt>
+<dd><p>Generates the codified (normalized) factorial design matrix.</p>
+<p>Returns:
+- pandas.DataFrame: A matrix with levels -1 and +1 for each factor.
+If center_points &gt; 0, rows with level 0 are also included.</p>
+<p>Notes:
+- The matrix is saved internally as self.codified_matrix.
+- Each factor is varied across two levels: -1 (low) and +1 (high).
+- Center points are optional and are placed at level 0 for all factors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.generate_doe">
+<span class="sig-name descname"><span class="pre">generate_doe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor_levels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_levels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.generate_doe" title="Link to this definition"></a></dt>
+<dd><p>Converts the codified matrix to a real matrix using the specified factor levels.</p>
+<p>Parameters:
+- factor_levels: list of tuples (low, high) for each factor.</p>
+<blockquote>
+<div><p>Example: [(3.0, 7.0), (40, 80), (0.1, 0.9)]</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>center_levels: list of center values for each factor.</dt><dd><p>Example: [5.0, 60, 0.5]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Returns:
+- pandas.DataFrame: Real-world matrix with actual factor levels.</p>
+<p>Notes:
+- Requires self.codified_matrix to exist; generates it if not.
+- Replaces -1, 0, +1 in the codified matrix with corresponding real values.
+- Result is saved as self.real_matrix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.plot_effect_diagrams">
+<span class="sig-name descname"><span class="pre">plot_effect_diagrams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">responses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">effect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'primary'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.plot_effect_diagrams" title="Link to this definition"></a></dt>
+<dd><p>Plots effect diagrams for primary effects and secondary interactions only.</p>
+<p>Parameters:
+- responses: list of response values (same length as self.matrix)
+- effect: “primary” or “secondary”</p>
+<p>Requires:
+- self.matrix: codified design matrix with ±1 and 0 levels</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.plot_effects">
+<span class="sig-name descname"><span class="pre">plot_effects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#8dd3c7'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.plot_effects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.plot_effects_percentage">
+<span class="sig-name descname"><span class="pre">plot_effects_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#8dd3c7'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.plot_effects_percentage" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.plot_effects_probability">
+<span class="sig-name descname"><span class="pre">plot_effects_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center_responses</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.plot_effects_probability" title="Link to this definition"></a></dt>
+<dd><p>Plots probability plot of effects from self.effects using center point replicates.</p>
+<p>Parameters:
+- center_responses: list of replicate response values at center points</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.plot_pareto_effects">
+<span class="sig-name descname"><span class="pre">plot_pareto_effects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center_responses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.plot_pareto_effects" title="Link to this definition"></a></dt>
+<dd><p>Plots a Pareto chart of effects sorted by absolute magnitude.</p>
+<p>Parameters:
+- center_responses: list of center point responses, required for significance threshold
+- alpha: significance level (default = 0.05)</p>
+<p>Requires:
+- self.effects: dict with effect names and values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.factorial.Factorial.randomize">
+<span class="sig-name descname"><span class="pre">randomize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.factorial.Factorial.randomize" title="Link to this definition"></a></dt>
+<dd><p>Randomize the run order of the design matrix.</p>
+<p>Parameters:
+-matrix (dataframe): Real matrix with real levels</p>
+<p>Returns:
+- pd.DataFRame: Randomized design matrix</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-chemometricspy.doe.fractional_factorial">
+<span id="chemometricspy-doe-fractional-factorial-module"></span><h2>chemometricspy.doe.fractional_factorial module<a class="headerlink" href="#module-chemometricspy.doe.fractional_factorial" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="chemometricspy.doe.fractional_factorial.FractionalFactorial">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chemometricspy.doe.fractional_factorial.</span></span><span class="sig-name descname"><span class="pre">FractionalFactorial</span></span><a class="headerlink" href="#chemometricspy.doe.fractional_factorial.FractionalFactorial" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#chemometricspy.doe.factorial.Factorial" title="chemometricspy.doe.factorial.Factorial"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factorial</span></code></a></p>
+<p>Allows construction of classical fractional factorial matrices based on generators and resolution constraints.</p>
+<p>Parameters:
+- number_of_factors (int): Number of factors (k).
+- resolution (str): Desired resolution of the design (“III”, “IV”, “V”).
+- generators (dict, optional): Dictionary of manually specified generators.</p>
+<p>Attributes:
+- design_matrix (pd.DataFrame): Codified design matrix for fractional factorial plan.
+- generators (dict): Generator equations used in construction.
+- resolution (str): Actual resolution used.</p>
+<p>Methods:
+- _get_classical_designs(): Returns predefined designs for common (k, resolution) combinations.
+- generate_matrix(): Generates the design matrix based on resolution and number of factors.
+- describe_plan(): Describes the structure and generators of the current fractional design.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.fractional_factorial.FractionalFactorial.describe_plan">
+<span class="sig-name descname"><span class="pre">describe_plan</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.fractional_factorial.FractionalFactorial.describe_plan" title="Link to this definition"></a></dt>
+<dd><p>Describes the current factorial design: number of runs, base factors, and generator aliases.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.fractional_factorial.FractionalFactorial.generate_matrix">
+<span class="sig-name descname"><span class="pre">generate_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_factors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'V'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.fractional_factorial.FractionalFactorial.generate_matrix" title="Link to this definition"></a></dt>
+<dd><p>Generate the factorial design matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_factors</strong> (<em>int</em>) – Number of factors.</p></li>
+<li><p><strong>factor_names</strong> (<em>list</em>) – List of factor names (length must match n_factors).</p></li>
+<li><p><strong>resolution</strong> (<em>str</em>) – Desired resolution (‘III’, ‘IV’, or ‘V’).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-chemometricspy.doe.regression">
+<span id="chemometricspy-doe-regression-module"></span><h2>chemometricspy.doe.regression module<a class="headerlink" href="#module-chemometricspy.doe.regression" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="chemometricspy.doe.regression.RegressionAnalysis">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chemometricspy.doe.regression.</span></span><span class="sig-name descname"><span class="pre">RegressionAnalysis</span></span><a class="headerlink" href="#chemometricspy.doe.regression.RegressionAnalysis" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Supports visualization of regression diagnostics and model predictions.</p>
+<p>Attributes:
+- matrix (pd.DataFrame): Full X matrix used in regression.
+- coefficients (dict): Estimated regression coefficients.
+- y_pred (np.array): Predicted Y values.
+- residuals (np.array): Vector of residuals.
+- model_type (str): Type of regression (“linear” or “quadratic”).
+- y_actual (np.array): Original response values used for fitting.</p>
+<p>Methods:
+- fit(): Builds the regression model based on matrix and responses.
+- regression_equation(): Prints the formatted regression model as an equation.
+- plot_residual_distribution(): KDE plot of residuals to assess normality.
+- plot_residuals_vs_predicted(): Scatter plot of residuals vs predicted values.
+- plot_predicted_vs_actual(): Scatter plot of predicted vs actual responses with R² annotation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.regression.RegressionAnalysis.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">responses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.regression.RegressionAnalysis.fit" title="Link to this definition"></a></dt>
+<dd><p>Builds a regression model from a given design matrix and response vector.</p>
+<p>Parameters:
+- matrix: codified design matrix (DataFrame)
+- responses: list or array of Y values
+- model_type: “linear” or “quadratic”</p>
+<p>Saves:
+- self.matrix: full matrix X used for regression
+- self.coefficients: dict of estimated coefficients
+- self.y_pred: predicted values
+- self.residuals: residuals (Y - Ŷ)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.regression.RegressionAnalysis.plot_predicted_vs_actual">
+<span class="sig-name descname"><span class="pre">plot_predicted_vs_actual</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.regression.RegressionAnalysis.plot_predicted_vs_actual" title="Link to this definition"></a></dt>
+<dd><p>Plots a scatterplot of predicted vs actual values.
+Uses self.y_pred and self.y_real from the last regression.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.regression.RegressionAnalysis.plot_residual_distribution">
+<span class="sig-name descname"><span class="pre">plot_residual_distribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.regression.RegressionAnalysis.plot_residual_distribution" title="Link to this definition"></a></dt>
+<dd><p>Plots only the KDE (density curve) of residuals, without histogram.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.regression.RegressionAnalysis.plot_residuals_vs_predicted">
+<span class="sig-name descname"><span class="pre">plot_residuals_vs_predicted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#4682B4'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.regression.RegressionAnalysis.plot_residuals_vs_predicted" title="Link to this definition"></a></dt>
+<dd><p>Plots residuals versus predicted Y values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chemometricspy.doe.regression.RegressionAnalysis.regression_equation">
+<span class="sig-name descname"><span class="pre">regression_equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chemometricspy.doe.regression.RegressionAnalysis.regression_equation" title="Link to this definition"></a></dt>
+<dd><p>Prints the regression equation based on self.model_coefficients.
+Uses proper formatting for quadratic terms (e.g., X1²).</p>
+<p>Parameters:
+- decimals: int, number of decimal places for coefficients</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-chemometricspy.doe">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-chemometricspy.doe" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Leonardo Guimarães.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
